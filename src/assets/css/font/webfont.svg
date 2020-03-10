@@ -1,0 +1,54 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+
+<svg>
+<metadata>
+Created by webfont
+</metadata>
+<defs>
+
+<font id="YRDZST-Bold" horiz-adv-x="256" vert-adv-y="256" >
+  <font-face
+    
+    font-family="YRDZST-Bold"
+    
+    font-weight="400"
+    
+    font-stretch="normal"
+    
+    units-per-em="256"
+    
+    ascent="221"
+    
+    descent="-54"
+    
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="uni4d" unicode="&#x4d;" d="M134 163L143 163Q159 163 174 37L182-4L168-4Q164-4 155 10L151 41Q141 122 141 122Q132 102 93 1Q80 8 67 80Q64 99 64 110L61 121Q61 126 64 125L64 125Q63 121 56 95Q45 72 20 8L10 8Q2 8 2 16L2 19Q19 57 56 154L63 157L68 157Q78 150 94 55L94 56Q102 69 130 149L134 163Z"  horiz-adv-x="187" vert-adv-y="256"  />
+
+    
+    <glyph glyph-name="uni53" unicode="&#x53;" d="M73 165Q99 161 106 146L105 141L101 134L79 144Q42 152 34 125Q37 106 80 93Q114 83 113 43Q100-8 42-2Q10 1-1 35L-1 44L10 52Q26 24 45 19L64 21Q86 26 88 45L88 49Q87 71 57 76Q9 94 12 126Q16 171 73 165Z"  horiz-adv-x="119" vert-adv-y="256"  />
+
+    
+    <glyph glyph-name="uni62" unicode="&#x62;" d="M20 178L28 178Q37 175 37 162L36 110Q36 102 35 96L66 96Q99 88 101 56Q98-1 53-1Q45-2 28-2L14-2L9 11Q14 11 19 167Q20 173 20 178M35 74L35 57Q33 27 34 23Q82 19 77 57Q73 79 53 75Q34 75 35 74Z"  horiz-adv-x="101" vert-adv-y="256"  />
+
+    
+    <glyph glyph-name="uni65" unicode="&#x65;" d="M44 96Q76 96 83 71Q83 47 23 36L23 37Q25 18 40 19Q51 16 86 33L84 15Q64-3 42-3Q-1-2 0 48Q6 88 44 96M24 56L26 56Q50 56 62 73L62 74Q62 76 57 78L52 78Q25 72 24 56Z"  horiz-adv-x="91" vert-adv-y="256"  />
+
+    
+    <glyph glyph-name="uni6c" unicode="&#x6c;" d="M17 160Q32 169 37 157Q34 126 32 109L28 50Q25 28 33 24L39 25L50 33Q54 33 61 26Q61 12 36-2Q0-1 9 54Q9 67 17 160Z"  horiz-adv-x="59" vert-adv-y="256"  />
+
+    
+    <glyph glyph-name="uni6d" unicode="&#x6d;" d="M94 94Q125 93 123 70L123 36Q123 15 142 11L142 3L133-2Q99-5 102 69L99 70Q79 73 78 48Q78 4 74 4L68 2Q59 5 59 13Q59 45 59 49Q57 67 46 65Q31 68 29 0L18-2Q7 1 8 18L8 24Q14 62 12 69Q10 76-4 87L16 91Q27 82 27 82L29 83Q37 90 50 91Q65 88 69 83Q79 94 94 94Z"  horiz-adv-x="140" vert-adv-y="256"  />
+
+    
+    <glyph glyph-name="uni6f" unicode="&#x6f;" d="M46 96Q85 94 88 46Q86 4 43-3Q3-3 2 45Q10 93 40 96L46 96M25 53L24 39Q25 21 43 17Q67 24 67 45Q71 72 44 76Q26 72 25 53Z"  horiz-adv-x="94" vert-adv-y="256"  />
+
+    
+    <glyph glyph-name="uni79" unicode="&#x79;" d="M-5 75L19 95Q24 95 33 80Q31 58 32 28L41 34Q59 51 61 94L70 94Q81 92 79 65L79-4Q79-8 80-17Q77-41 66-48Q59-58 38-57Q8-56-1-18L-1-12L7-12Q24-36 39-35Q57-33 57-19L57 24Q56 5 64 32Q53 20 32-1Q25-1 10 8L13 16L13 72Q13 75-5 75Z"  horiz-adv-x="94" vert-adv-y="256"  />
+
+    
+
+  </font>
+</defs></svg>

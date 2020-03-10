@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "741909",
+      "name": "个人 (13)",
+      "font_class": "geren13",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "970762",
+      "name": "文章",
+      "font_class": "wenzhang-copy",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "3762475",
+      "name": "技能特长-01-01",
+      "font_class": "jinengtechang--",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "4237153",
+      "name": "项目部",
+      "font_class": "xiangmubu",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    }
+  ]
+}

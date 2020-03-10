@@ -1,0 +1,77 @@
+html,body,#app{
+    height:100%;
+    margin:0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'logoFont';
+    font-display: swap;
+    src: url('font/webfont.eot'); /* IE9 */
+    src: url('font/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('font/webfont.woff2') format('woff2'),
+    url('font/webfont.woff') format('woff'), /* chrome、firefox */
+    url('font/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('font/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    margin-right: 10px;
+}
+
+.el-divider {
+    height:2px !important;
+}
+
+
+.el-row {
+    display: flex;
+}
+.el-col {
+    width: 200px;
+    flex: 1;
+}
+.time {
+  font-size: 13px;
+  color: #999;
+}
+
+.bottom {
+  margin-top: 13px;
+  line-height: 12px;
+}
+
+.button {
+  padding: 0;
+  float: right;
+}
+
+.image {
+  width: 100%;
+  display: block;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: '';
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+#scene {
+  width: 100%;
+  height: 100%;
+}
+/** 全局面包屑标签的样式*/
+#scene .el-breadcrumb {
+  border-radius: 0 18% 18% 0;
+  width: 17%;
+  height: 40px;
+  line-height: 40px;
+  color: #000;
+  background: #d1df56;
+  opacity: 1; /** 若父元素存在opacity属性，则会影响子元素，及时子元素的opacity使1.0，也是在父元素的opacity基础上设置的 */
+}
