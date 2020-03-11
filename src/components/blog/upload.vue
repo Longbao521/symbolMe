@@ -50,7 +50,7 @@
       </el-input>
       <span slot="footer" class="dialog-footer">
         <el-button @click="uploadBlogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="uploadBlog">确 定</el-button>
+        <el-button type="primary" v-btn-control="uploadBlog" :loading="isLoading">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -80,7 +80,9 @@ export default {
       // 博客的标题
       title: '',
       // 博客的简要描述
-      textarea: ''
+      textarea: '',
+      // 是否在等待请求
+      isLoading: false
     }
   },
   methods: {
@@ -115,6 +117,7 @@ export default {
     },
     // 将博客保存到数据库中
     async uploadBlog() {
+      this.isLoading = true
       const { data: res } = await this.$http.post('/users/uploadBlog', {
         title: this.title, // FIXME:后期优化为一个对象
         tags: this.dynamicTags,
@@ -133,6 +136,10 @@ export default {
           message: '入库成功'
         })
       }
+      this.isLoading = false
+      return new Promise((resolve, reject) => {
+        resolve('请求结束')
+      })
     }
   },
   mounted() {}

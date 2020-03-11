@@ -47,7 +47,10 @@
         </el-form-item>
         <!--按钮-->
         <el-form-item class="btns">
-          <el-button type="primary" @click="login">登录</el-button>
+          <!--使用自定义指令，防止触发两次post请求-->
+          <el-button type="primary" v-btn-control="login" :loading="isLoading"
+            >登录</el-button
+          >
           <el-button type="info">重置</el-button>
         </el-form-item>
       </el-form>
@@ -95,7 +98,9 @@ export default {
           { required: true, message: '请输入登陆密码', trigger: 'blur' }, // 失去焦点blur时触发
           { min: 6, max: 15, message: '长度在6-15个字符之间', trigger: 'blur' }
         ]
-      }
+      },
+      // 按钮是否在等待响应
+      isLoading: false
     }
   },
   methods: {
@@ -106,6 +111,7 @@ export default {
       this.showDown = false
     },
     async login() {
+      this.isLoading = true
       const { data: res } = await this.$http
         .post('/index/login', this.loginFormData)
         .catch(err => {
@@ -124,6 +130,10 @@ export default {
           type: 'warning'
         })
       }
+      this.isLoading = false
+      return new Promise((resolve, reject) => {
+        resolve('响应结束')
+      })
     }
   },
   directives: {

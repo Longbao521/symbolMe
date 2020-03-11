@@ -25,7 +25,18 @@ axios.interceptors.request.use(config => {
 })
 // 全局注册axios
 Vue.prototype.$http = axios
-
+// 全局注册命令，防止按钮在发送请求过程中，发送多次请求
+Vue.directive('btn-control', {
+  // 插入dom时
+  inserted: function(el, bind) {
+    el.addEventListener('click', () => {
+      el.disabled = true
+      bind.value().then(res => { // bind.value()会触发相应的函数，指令绑定的函数返回值后，触发
+        el.disabled = false
+      })
+    })
+  }
+})
 new Vue({
   router,
   render: h => h(App)
