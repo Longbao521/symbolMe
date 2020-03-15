@@ -11,7 +11,14 @@
         <p v-for="(item, index) in skillInfos" :key="index" v-html="item"></p>
       </div>
       <div id="tagContainer">
-        <el-tag v-for="tag in tags" :key="tag.name" closable :type="tag.type">{{tag.name}}</el-tag>
+        <el-tag
+          v-for="tag in tags"
+          :key="tag.name"
+          closable
+          :type="tag.tagType"
+          @close="deleteTag(tag)"
+          >{{ tag.name }}</el-tag
+        >
       </div>
     </section>
   </div>
@@ -33,64 +40,29 @@ export default {
         '<div class="marker" ></div>严格遵守<em>ESLint</em>代码书写规范'
       ],
       // 标签对象
-      tags: [
-        {
-          name: 'HTML5',
-          type: 'success'
-        },
-        {
-          name: 'CSS3',
-          type: 'success'
-        },
-        {
-          name: 'LESS&SCSS',
-          type: 'info'
-        },
-        {
-          name: 'ECMAScript6',
-          type: 'success'
-        },
-        {
-          name: 'Vue全家桶',
-          type: 'success'
-        },
-        {
-          name: 'NodeJs',
-          type: 'warning'
-        },
-        {
-          name: 'Express',
-          type: 'warning'
-        },
-        {
-          name: 'Egg',
-          type: 'danger'
-        },
-        {
-          name: 'Electron',
-          type: 'danger'
-        },
-        {
-          name: 'MongoDB',
-          type: 'success'
-        },
-        {
-          name: 'PostGreSQL&PostGIS',
-          type: 'danger'
-        },
-        {
-          name: 'HTTP',
-          type: 'success'
-        },
-        {
-          name: 'Geoserver',
-          type: 'success'
-        },
-        {
-          name: 'ESLint',
-          type: 'warning'
-        }
-      ]
+      tags: []
+    }
+  },
+  created() {
+    // 获取技能信息
+    this.getSkillInfo()
+  },
+  methods: {
+    // 删除指定标签
+    deleteTag(tag) {
+      this.tags.splice(this.tags.indexOf(tag), 1)
+    },
+    // 获取技能信息，暂时只支持标签
+    async getSkillInfo() {
+      const { data: res } = await this.$http.get('/users/getTags')
+      if (res.status !== 200) {
+        this.$message({
+          type: 'warning',
+          message: '获取技能信息失败'
+        })
+      } else {
+        this.tags = res.docs[0].tags
+      }
     }
   }
 }
@@ -112,15 +84,15 @@ export default {
     }
 
     #tagContainer {
-        display: flex;
-        justify-content: space-around;
-        flex-flow: wrap;
-        width: 50%;
-        margin: 30px auto;
+      display: flex;
+      justify-content: space-around;
+      flex-flow: wrap;
+      width: 50%;
+      margin: 30px auto;
 
-        span {
-            margin: 4px;
-        }
+      span {
+        margin: 4px;
+      }
     }
   }
 }

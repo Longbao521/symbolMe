@@ -18,7 +18,7 @@
           <h1>{{ item.title }}</h1>
           <p>{{ item.description }}</p>
         </div>
-        <a href="#" class="moreInfo" @click="showMoreInfo(item.html)"
+        <a href="#" class="moreInfo" @click="showMoreInfo(item.html, item.title)"
           >Read More</a
         >
       </div>
@@ -42,6 +42,8 @@ export default {
       isShowMoreInfo: false,
       // 显示的详细博客数据
       moreInfo: ''
+      // 显示的详细博客的标题
+      // moreInfoTitle: 'test'
     }
   },
   created() {
@@ -60,10 +62,11 @@ export default {
       }
     },
     // 显示详细信息
-    showMoreInfo(moreInfo) {
+    showMoreInfo(moreInfo, moreInfoTitle) {
       this.isShowMoreInfo = true
       this.moreInfo = ''
       this.moreInfo = moreInfo
+      // this.moreInfoTitle = moreInfoTitle
     },
     // 返回简略信息
     backSimpleInfo() {
@@ -207,23 +210,27 @@ export default {
 /** 使用deep 对子组件中元素进行选择 */
 /deep/ .el-card {
   width: 85%;
-  background: #c9ffbf; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffafbd,
-    #c9ffbf
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ffafbd,
-    #c9ffbf
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #636e72;
 
   .el-card__header {
     padding: 9px 20px;
 
     i {
       cursor: pointer;
+    }
+  }
+
+  .el-card__body {
+    h1 {
+      text-align: center;
+      color: #333;
+      font-family: Helvetica;
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+    }
+    h1::after {
+      content: '';
+      color: yellow;
     }
   }
 }
