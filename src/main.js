@@ -12,6 +12,8 @@ import './assets/css/animate.css'
 import './assets/asideIconFont/iconfont.css'
 // 导入视频播放样式
 import 'video.js/dist/video-js.css'
+// 导入矢量图标
+// import 'font-awesome/less/font-awesome.less'
 // 导入axios
 import axios from 'axios'
 

@@ -14,18 +14,52 @@
         <el-tag
           v-for="tag in tags"
           :key="tag.name"
-          closable
+          :closable="isEdit"
           :type="tag.tagType"
           @close="deleteTag(tag)"
           >{{ tag.name }}</el-tag
         >
+        <div v-show="isEdit" style="display:flex; aligin-items: center">
+          <el-input
+            class="input-new-tag"
+            v-if="inputVisible"
+            v-model="inputValue"
+            ref="saveTagInput"
+            size="small"
+            @keyup.enter.native="addTag"
+          >
+          </el-input>
+          <el-button
+            v-else
+            class="button-new-tag"
+            size="small"
+            @click="showInput"
+            >+ New Tag</el-button
+          >
+        </div>
       </div>
+      <edit-component>
+        <template v-slot:before>
+          <span class="el-icon-s-fold">工具</span>
+        </template>
+        <template v-slot:after>
+          <a href="#" @click="edit"><i class="el-icon-edit"></i></a>
+          <a href="#"><i class="el-icon-finished"></i></a>
+          <a href="#"><i class="el-icon-refresh-left"></i></a>
+        </template>
+      </edit-component>
     </section>
   </div>
 </template>
 
 <script>
+// 导入编辑按钮组件
+import editComponent from '../tools/edit.vue'
+
 export default {
+  components: {
+    editComponent
+  },
   data() {
     return {
       // 技能对象
@@ -40,7 +74,13 @@ export default {
         '<div class="marker" ></div>严格遵守<em>ESLint</em>代码书写规范'
       ],
       // 标签对象
-      tags: []
+      tags: [],
+      // 是否处于编辑状态
+      isEdit: false,
+      // 是否要添加新标签
+      inputVisible: false,
+      // 添加的新标签的值
+      inputValue: ''
     }
   },
   created() {
@@ -63,6 +103,22 @@ export default {
       } else {
         this.tags = res.docs[0].tags
       }
+    },
+    // 编辑事件
+    edit() {
+      this.isEdit = true
+    },
+    // 显示添加标签的输入窗口
+    showInput() {
+      this.inputVisible = true
+    },
+    // 添加标签
+    addTag() {
+      this.tags.push({
+        name: this.inputValue,
+        tagType: 'success'
+      })
+      this.inputVisible = false
     }
   }
 }
