@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     async getBlogs() {
-      const { data: res } = await this.$http.get('/users/getBlogs')
+      const { data: res } = await this.$http.get('/users/blog')
       if (res.status !== 200) {
         this.$message({
           type: 'warning',

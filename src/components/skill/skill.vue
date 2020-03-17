@@ -43,9 +43,14 @@
           <span class="el-icon-s-fold">工具</span>
         </template>
         <template v-slot:after>
-          <a href="#" @click="edit"><i class="el-icon-edit"></i></a>
-          <a href="#"><i class="el-icon-finished"></i></a>
-          <a href="#"><i class="el-icon-refresh-left"></i></a>
+          <!--使用prevent阻止默认事件-->
+          <a href.prevent="#" @click="edit"><i class="el-icon-edit"></i></a>
+          <a href.prevent="#" @click="submit"
+            ><i class="el-icon-finished"></i
+          ></a>
+          <a href.prevent="#"
+            ><i class="el-icon-refresh-left"></i
+          ></a>
         </template>
       </edit-component>
     </section>
@@ -94,7 +99,7 @@ export default {
     },
     // 获取技能信息，暂时只支持标签
     async getSkillInfo() {
-      const { data: res } = await this.$http.get('/users/getTags')
+      const { data: res } = await this.$http.get('/users/tags')
       if (res.status !== 200) {
         this.$message({
           type: 'warning',
@@ -119,7 +124,35 @@ export default {
         tagType: 'success'
       })
       this.inputVisible = false
+    },
+    // 提交标签更新事件
+    async submit() {
+      const { data: res } = await this.$http.put('/users/tags', this.tags)
+      if (res.status !== 200) {
+        this.$message({
+          type: 'warning',
+          message: '更新标签失败'
+        })
+      } else {
+        this.$message({
+          type: 'success',
+          message: '更新标签成功'
+        })
+        this.isEdit = false
+      }
     }
+    // 标签修改的回退
+    // async reset() {
+    //   const { data: res } = await this.$http.get('/users/oldTags')
+    //   if (res.status !== 200) {
+    //     this.$message({
+    //       type: 'warning',
+    //       message: '回退技能信息失败'
+    //     })
+    //   } else {
+    //     this.tags = res.docs[0].tags
+    //   }
+    // }
   }
 }
 </script>

@@ -118,7 +118,7 @@ export default {
     // 将博客保存到数据库中
     async uploadBlog() {
       this.isLoading = true
-      const { data: res } = await this.$http.post('/users/uploadBlog', {
+      const { data: res } = await this.$http.post('/users/blog', {
         title: this.title, // FIXME:后期优化为一个对象
         tags: this.dynamicTags,
         html: this.html,
