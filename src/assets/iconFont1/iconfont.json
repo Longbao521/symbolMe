@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "356435",
+      "name": "地球",
+      "font_class": "diqiu",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    }
+  ]
+}

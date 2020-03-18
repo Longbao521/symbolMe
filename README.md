@@ -59,9 +59,9 @@ Vue、Vue-CLI、Axios、LESS、Element-UI、Animate、ESLint
 2. 增加相应功能模块
 3. 完善token验证
 4. 推出小程序版(mpvue),桌面版(ELectron)以及跨平台(Flutter)
-<<<<<<< HEAD
+
 
 ### 更新日志
 1.0.1 利用自定义指令，实现提交按钮的防抖
-=======
->>>>>>> 937792a6009a392c6e52732380700eb7a1e0d057
+1.0.2 实现标签的编辑更新功能
+1.1.0 修改webpack，引入Cesium，开发Cesium测试平台模块

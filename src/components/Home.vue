@@ -71,6 +71,10 @@
                 </el-submenu>
               </el-menu-item-group>
             </el-submenu>
+            <el-menu-item :index="'/cesium'">
+              <span class="iconfont icon-diqiu"></span>
+              <span slot="title">cesium测试平台</span>
+            </el-menu-item>
           </el-menu>
         </nav>
       </aside>
@@ -178,7 +182,7 @@ export default {
     }
   }
   article {
-    overflow: auto
+    overflow: auto;
   }
 }
 

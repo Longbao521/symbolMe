@@ -14,6 +14,8 @@ import skill from '../components/skill/skill.vue'
 import BlogInit from '../components/blog/BlogInit.vue'
 // 导入项目模块
 import project from '../components/project/index.vue'
+// 导入cesium开发平台模块
+import cesiumPlatform from '../components/cesium/index.vue'
 
 // 全局使用vue-router
 Vue.use(VueRouter)
@@ -51,6 +53,10 @@ const router = new VueRouter({
         {
           path: '/project',
           component: project
+        },
+        {
+          path: '/cesium',
+          component: cesiumPlatform
         }
       ]
     }
