@@ -1,11 +1,42 @@
 <template>
-  <div id="cesium"></div>
+  <div id="cesium">
+    <el-card
+      class="cardEditor"
+      v-drag="{
+        setXY: setXY,
+        getFlag: getFlag,
+        setFlag: setFlag,
+        setActive: setActive,
+        setRedBorder: setRedBorder
+      }"
+      :class="{ active: isActive, redBorder: redBorder }"
+    >
+      <div slot="header" class="clearfix">
+        <span>编辑程序</span>
+        <el-button style="float: right; padding: 3px 0" type="text"
+          >执行</el-button
+        >
+      </div>
+      <div v-for="o in 4" :key="o" class="text item">
+        {{ '列表内容 ' + o }}
+      </div>
+    </el-card>
+  </div>
 </template>
 
 <script>
 import { Viewer } from 'cesium/Cesium'
 import '../../../node_modules/cesium/Build/Cesium/Widgets/widgets.css'
 export default {
+  data() {
+    return {
+      x: '0',
+      y: '0',
+      flag: 0,
+      isActive: false,
+      redBorder: true
+    }
+  },
   mounted() {
     this.initView()
   },
@@ -25,6 +56,22 @@ export default {
         scene3DOnly: true // 如果设置为true，则所有几何图形以3D模式绘制以节约GPU资源
       })
       console.log(cesium)
+    },
+    setXY: function(x, y) {
+      this.x = x
+      this.y = y
+    },
+    getFlag: function() {
+      return this.flag
+    },
+    setFlag: function(num) {
+      this.flag = num
+    },
+    setActive: function(b) {
+      this.isActive = b
+    },
+    setRedBorder: function(b) {
+      this.redBorder = b
     }
   }
 }
@@ -34,9 +81,26 @@ export default {
 #cesium {
   height: 100%;
   width: 100%;
+  position: relative;
+
+  .cardEditor {
+    position: absolute;
+    top: 3vh;
+    left: 3vh;
+    width: 50vh;
+    height: 60vh;
+    z-index: 999;
+    background: rgba(237, 255, 255, 0.8);
+  }
 }
 /deep/ .cesium-widget-credits {
   display: none !important;
   visibility: hide !important;
+}
+.active {
+  border: 1px solid blue;
+}
+.redBorder {
+  border: 1px solid red;
 }
 </style>

@@ -62,6 +62,6 @@ Vue、Vue-CLI、Axios、LESS、Element-UI、Animate、ESLint
 
 
 ### 更新日志
-1.0.1 利用自定义指令，实现提交按钮的防抖
-1.0.2 实现标签的编辑更新功能
-1.1.0 修改webpack，引入Cesium，开发Cesium测试平台模块
++ 1.0.1 利用自定义指令，实现提交按钮的防抖
++ 1.0.2 实现标签的编辑更新功能
++ 1.1.0 修改webpack，引入Cesium，开发Cesium测试平台模块
