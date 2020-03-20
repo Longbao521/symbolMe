@@ -17,9 +17,7 @@
           >执行</el-button
         >
       </div>
-      <div v-for="o in 4" :key="o" class="text item">
-        {{ '列表内容 ' + o }}
-      </div>
+      <code-editor @input="codeInput"></code-editor>
     </el-card>
   </div>
 </template>
@@ -27,7 +25,12 @@
 <script>
 import { Viewer } from 'cesium/Cesium'
 import '../../../node_modules/cesium/Build/Cesium/Widgets/widgets.css'
+// 引入codeEditor组件
+import codeEditor from './codeEditor.vue'
 export default {
+  components: {
+    codeEditor
+  },
   data() {
     return {
       x: '0',
@@ -72,6 +75,10 @@ export default {
     },
     setRedBorder: function(b) {
       this.redBorder = b
+    },
+    // 代码输入发生改变
+    codeInput(code) {
+      console.log(code)
     }
   }
 }

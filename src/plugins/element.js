@@ -23,7 +23,9 @@ import {
     Message,
     Dialog,
     Carousel,
-    CarouselItem
+    CarouselItem,
+    Select,
+    Option
  } from 'element-ui'
 
 import VueVideoPlayer from 'vue-video-player'
@@ -52,5 +54,7 @@ Vue.use(Steps)
 Vue.use(Dialog)
 Vue.use(Carousel)
 Vue.use(CarouselItem)
+Vue.use(Select)
+Vue.use(Option)
 
 Vue.prototype.$message = Message
