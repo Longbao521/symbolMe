@@ -48,10 +48,13 @@ Vue、Vue-CLI、Axios、LESS、Element-UI、Animate、ESLint
 
 项目效果展示:
 
+![登录界面](https://github.com/Longbao521/symbolMe/blob/master/static/login.gif)
+![登录验证(支持token令牌)](https://github.com/Longbao521/symbolMe/blob/master/static/loginVerify.gif)
 ![信息面板](./static/info.png)
 ![技能面板](./static/skill.png)
 ![项目面板](./static/project.png)
 ![上传博客面板](./static/blog.png)
+![博客首页](https://github.com/Longbao521/symbolMe/blob/master/static/blogInit.gif)
 ![cesium测试平台](./static/cesium.png)
 
 
