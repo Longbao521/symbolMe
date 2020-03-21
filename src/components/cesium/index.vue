@@ -11,7 +11,7 @@
       }"
       :class="{ active: isActive, redBorder: redBorder }"
     >
-      <div slot="header" class="clearfix">
+      <div slot="header" class="clearfix" @click.stop="">
         <span>编辑程序</span>
         <el-button
           style="float: right; padding: 3px 0"

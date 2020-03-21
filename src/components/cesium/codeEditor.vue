@@ -1,5 +1,5 @@
 <template>
-  <div class="in-coder-panel">
+  <div class="in-coder-panel" @click.stop="">
     <textarea ref="textarea"></textarea>
     <el-select class="code-mode-select" v-model="mode" @change="changeMode">
       <el-option
