@@ -52,6 +52,7 @@ Vue、Vue-CLI、Axios、LESS、Element-UI、Animate、ESLint
 ![技能面板](./static/skill.png)
 ![项目面板](./static/project.png)
 ![上传博客面板](./static/blog.png)
+![cesium测试平台](./static/cesium.png)
 
 
 ### 下一步工作
@@ -65,3 +66,4 @@ Vue、Vue-CLI、Axios、LESS、Element-UI、Animate、ESLint
 + 1.0.1 利用自定义指令，实现提交按钮的防抖
 + 1.0.2 实现标签的编辑更新功能
 + 1.1.0 修改webpack，引入Cesium，开发Cesium测试平台模块
++ 1.1.1 支持在线编辑代码并执行，

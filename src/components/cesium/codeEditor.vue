@@ -187,7 +187,7 @@ export default {
 /deep/ .code-mode-select {
   position: absolute;
   z-index: 2;
-  right: 10px;
+  right: 70px;
   top: 10px;
   max-width: 130px;
 }

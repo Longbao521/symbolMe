@@ -13,7 +13,10 @@
     >
       <div slot="header" class="clearfix">
         <span>编辑程序</span>
-        <el-button style="float: right; padding: 3px 0" type="text"
+        <el-button
+          style="float: right; padding: 3px 0"
+          type="text"
+          @click="runCode"
           >执行</el-button
         >
       </div>
@@ -23,7 +26,7 @@
 </template>
 
 <script>
-import { Viewer } from 'cesium/Cesium'
+import * as Cesium from 'cesium/Cesium'
 import '../../../node_modules/cesium/Build/Cesium/Widgets/widgets.css'
 // 引入codeEditor组件
 import codeEditor from './codeEditor.vue'
@@ -37,7 +40,11 @@ export default {
       y: '0',
       flag: 0,
       isActive: false,
-      redBorder: true
+      redBorder: true,
+      code: '',
+      // cesium场景器
+      viewer: null,
+      Cesium: Cesium
     }
   },
   mounted() {
@@ -45,7 +52,7 @@ export default {
   },
   methods: {
     initView() {
-      const cesium = new Viewer('cesium', {
+      const viewer = new Cesium.Viewer('cesium', {
         animation: false, // 是否创建动画小器件，左下角仪表
         baseLayerPicker: false, // 是否显示图层选择器
         fullscreenButton: false, // 是否显示全屏按钮
@@ -58,7 +65,7 @@ export default {
         navigationHelpButton: false, // 是否显示右上角的帮助按钮
         scene3DOnly: true // 如果设置为true，则所有几何图形以3D模式绘制以节约GPU资源
       })
-      console.log(cesium)
+      this.viewer = viewer
     },
     setXY: function(x, y) {
       this.x = x
@@ -78,7 +85,20 @@ export default {
     },
     // 代码输入发生改变
     codeInput(code) {
-      console.log(code)
+      this.code = code
+    },
+    // 执行代码
+    runCode() {
+      // eslint-disable-next-line
+      var viewer = this.viewer
+      // eslint-disable-next-line
+      var Cesium = this.Cesium
+      try {
+        // eslint-disable-next-line
+        eval(this.code)
+      } catch (err) {
+        console.warn(err)
+      }
     }
   }
 }
