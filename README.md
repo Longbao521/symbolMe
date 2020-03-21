@@ -25,10 +25,11 @@ npm run lint
 2. 项目信息存储在mongodb数据库，大文件用gltf存储，后台服务程序由express搭建。[项目地址:https://github.com/Longbao521/symbolMeServer](https://github.com/Longbao521/symbolMeServer)
 3. 项目包含多个动画，有animate.css库，也有自定义的动画，供大家参考
 4. 项目支持markdown语言，支持博客的编辑预览功能，支持上传功能，上传后的博客保存在数据库中，并实时更新在自己的博客首页上，可供大家记录自己所学
-5. 项目用到了vue项目常用的一些工具，如vue-cli脚手架搭建项目，element-ui构建基础组件样式等
-6. 项目会一直维护完善，并会推出小程序版(mpVue,[项目地址:https://github.com/Longbao521/mpvue](https://github.com/Longbao521/mpvue))以及桌面版(Electron),如果可以会继续研究Flutter，开发跨平台应用程序，敬请期待
-7. 项目代码严格遵守ESLint规范
-8. 项目布局大部分采用了flex布局
+5. 支持Cesium，可以在线编辑测试代码并运行
+6. 项目用到了vue项目常用的一些工具，如vue-cli脚手架搭建项目，element-ui构建基础组件样式等
+7. 项目会一直维护完善，并会推出小程序版(mpVue,[项目地址:https://github.com/Longbao521/mpvue](https://github.com/Longbao521/mpvue))以及桌面版(Electron),如果可以会继续研究Flutter，开发跨平台应用程序，敬请期待
+8. 项目代码严格遵守ESLint规范
+9. 项目布局大部分采用了flex布局
 
 ### 技术栈
 Vue、Vue-CLI、Axios、LESS、Element-UI、Animate、ESLint
