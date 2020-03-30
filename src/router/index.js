@@ -14,8 +14,8 @@ import skill from '../components/skill/skill.vue'
 import BlogInit from '../components/blog/BlogInit.vue'
 // 导入项目模块
 import project from '../components/project/index.vue'
-// 导入cesium开发平台模块
-import cesiumPlatform from '../components/cesium/index.vue'
+// 导入cesium开发平台模块,采用懒加载
+const cesiumPlatform = () => import('../components/cesium/index.vue')
 
 // 全局使用vue-router
 Vue.use(VueRouter)

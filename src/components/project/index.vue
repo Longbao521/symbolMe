@@ -130,16 +130,9 @@ export default {
       this.sectionClass.length = 0
       this.projName = this.$route.query.projName
       this.sectionClass.push('animated', 'myRotate')
-      console.log(this.sectionClass)
     },
     projName(curVal) {
       this.projObj = this.projInfo[curVal]
-    }
-  },
-  methods: {
-    async readFile() {
-      const data = await this.$http.get('/users/readFile')
-      console.log(data)
     }
   }
 }
